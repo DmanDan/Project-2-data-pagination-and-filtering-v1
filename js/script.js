@@ -99,7 +99,9 @@ function addSearch(){
    label.appendChild(createElement('button',undefined,'type','button')).appendChild(createElement('img',undefined,'src','img/icn-search.svg','alt','Search icon'));
    header.appendChild(label);
    label.addEventListener('keyup',()=>{search()});
-   label.addEventListener('click',()=>{search()});
+   label.addEventListener('click',(event)=>{
+      if(event.target.tagName==="IMG"||event.target.tagName==="BUTTON"){search()}
+   });
 }
 /**
  * 'search' function
